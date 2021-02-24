@@ -21,9 +21,13 @@
         </div>
       </section>
       <footer>
-        <div>
-          <input type="text" placeholder="Type a message" v-model="message" />
-          <button @click="saveMessage" class="bb">send</button>
+        <div class="chat-div">
+          <input
+            class="chat-inputField"
+            placeholder="Type a message"
+            v-model="message"
+          />
+          <button @click="saveMessage" class="button">send</button>
         </div>
       </footer>
     </div>
@@ -101,6 +105,23 @@ export default {
   width: 40%;
   margin: auto;
 }
+.chat-div {
+  display: flex;
+}
+.chat-inputField {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  display: block;
+  width: 30rem;
+  padding: 10px 15px;
+  background-color: #030303;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
 * {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -109,13 +130,15 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-.bb {
+.button {
   width: 20%;
-  margin-right: 0rem;
-  padding: 10px 3px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  font-size: 18px;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  display: block;
+  width: 20%;
+  padding: 10px 15px;
 }
 .view {
   display: flex;
@@ -129,73 +152,6 @@ export default {
       display: block;
       width: 100%;
       padding: 15px;
-
-      .form-inner {
-        display: block;
-        background-color: #fff;
-        padding: 50px 15px;
-        border-radius: 16px;
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-        h1 {
-          color: #aaa;
-          font-size: 28px;
-          margin-bottom: 30px;
-        }
-        label {
-          display: block;
-          margin-bottom: 5px;
-          color: #aaa;
-          font-size: 16px;
-          transition: 0.4s;
-        }
-        input[type="text"] {
-          appearance: none;
-          border: none;
-          outline: none;
-          background: none;
-          display: block;
-          width: 100%;
-          padding: 10px 15px;
-          border-radius: 8px;
-          margin-bottom: 15px;
-
-          color: #333;
-          font-size: 18px;
-          box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-          background-color: #f3f3f3;
-          transition: 0.4s;
-          &::placeholder {
-            color: #888;
-            transition: 0.4s;
-          }
-        }
-        input[type="submit"] {
-          appearance: none;
-          border: none;
-          outline: none;
-          background: none;
-          display: block;
-          width: 100%;
-          padding: 10px 15px;
-          background-color: #ea526f;
-          border-radius: 8px;
-          color: #fff;
-          font-size: 18px;
-          font-weight: 700;
-        }
-        &:focus-within {
-          label {
-            color: #ea526f;
-          }
-          input[type="text"] {
-            background-color: #fff;
-            box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-            &::placeholder {
-              color: #666;
-            }
-          }
-        }
-      }
     }
   }
   &.chat {
@@ -264,51 +220,6 @@ export default {
               background-color: #ea526f;
             }
           }
-        }
-      }
-    }
-    footer {
-      position: sticky;
-      bottom: 0px;
-      background-color: #fff;
-      padding: 30px;
-      box-shadow: 0px 0px 12px rgba(100, 100, 100, 0.2);
-      form {
-        display: flex;
-        input[type="text"] {
-          flex: 1 1 100%;
-          appearance: none;
-          border: none;
-          outline: none;
-          background: none;
-          display: block;
-          width: 100%;
-          padding: 10px 15px;
-          border-radius: 8px 0px 0px 8px;
-
-          color: #333;
-          font-size: 18px;
-          box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-          background-color: #f3f3f3;
-          transition: 0.4s;
-          &::placeholder {
-            color: #888;
-            transition: 0.4s;
-          }
-        }
-
-        input[type="submit"] {
-          appearance: none;
-          border: none;
-          outline: none;
-          background: none;
-          display: block;
-          padding: 10px 15px;
-          border-radius: 0px 8px 8px 0px;
-          background-color: #ea526f;
-          color: #fff;
-          font-size: 18px;
-          font-weight: 700;
         }
       }
     }
